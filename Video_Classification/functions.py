@@ -2,6 +2,10 @@ from os.path import isfile, join
 from os import listdir
 import pickle
 
+'''
+cd /media/alan/343EFB573EFB111A/Box\ Sync/git/video/data
+'''
+
 # Path directories
 paths = {
     'data_path'     : '../../s3/FF-Data/',
