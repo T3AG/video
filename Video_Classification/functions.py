@@ -4,6 +4,10 @@ import pickle
 
 '''
 cd /media/alan/343EFB573EFB111A/Box\ Sync/git/video/data
+git add *
+git commit -m "your comment here"
+git push origin master
+git pull
 '''
 
 # Path directories
