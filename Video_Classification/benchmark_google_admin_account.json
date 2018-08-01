@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "cloudvideointelligence-202703",
+  "private_key_id": "20fa450fde6f89af76612335e96c678301965c62",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDHIO3QmC/4S0aD\n+61FLDNHrYH9r40PBqggXrcXL86Jo4ZEXvfV0h6Fske6Xe3oelUGukMZggeOblVC\n4qjcOpZI+zooYHg/m1Mdu76il1h3aLFWIU115awkqxyiTvit0D4uhkhDuwfv95Fx\nVOipqsE/CTXaHFzPz8MZkUBv+XmZNCp6VpnBmJjaG2t4QSHsZewiEO5L3sw8Tb/2\nfvsQnavrh+nhORpPPvQCCThURHOzpfh2wQIAOmgAyCLGCpgpltnBYfj4FB2QwKNO\nNIq59CjzLeT4v72hRTTKBdn+tAeIj659wj9VON6tpxQoKAB1Cj2OYQZGhI/B3/js\nKcFxgX9zAgMBAAECggEAAvTVMwyfYbNUZ6874lQGquDDlk2d7YQuyNQ/KaP3EAoS\nez9htJX7CAcek4DDgHkYfBIV3vIURKQUtfqBgUuJYaoBMgpEnsUilcVsziMrGBLA\n10OFT+PKC31S3oIHpST7V1t9BSxosMJfMWyOS76SQepUF1nmcttlzSJf74mnqYOb\nBkqEsA8iAwK5mzFrMQiOrM0Zmr+3uYuXyDXK+byyE9jEgDHHaZM+gjpyDVnC21jb\nPrjX1i17da9aQDWptS4WP1AEhnKNuTCY6wCT5bdpAXp6c9aAZmd/cZ4xnI9wnvd0\nEmvWuDH5gOcDNxw3J/W60LWBBK/NUUbNsHeHLe1/SQKBgQD3iOFnKWZ5ouS1sNCO\nQhjfT/mi8ySDO36Ad/r6efovhiQ0BBWuQGVDxhKJKSqB6QACSPso2lq7TfPmetZJ\nALN98j4kcDkgKyZyrveEW2Sdrh9g4BdFh9s5g3zNlRUbUv35u0xdBXNtJ5Rx+Lnm\nrtnHqsO3LgPiY250nDilUljAvwKBgQDN8EM2pvoP6vuczkYdrP+C3CXr4TGcEySr\nroMqBPczov8dArBJPDHOXeqB99hgh6Hb+rUgLjWKttMzM0jaYgkiFZUB7N3WycKt\n9vwQjZNM8YaCbzs37T1LOocleN4FGN8MZ/ns06qvpgkhfsYrnn2b7HncmGsaApaf\nmpsq/6v6TQKBgQDxuMtUMEuPsJBjFN00bjtXpwOCKqmXNXvc/E0sV/0Gd5nW6b46\nQUwiGMR1CKwn3F5T3OzXAhPkIMVyZrXm6DZfYTVp4+UFEt4i09WFfLIOgMDHm01e\nasKbsVkocNMBsdOuEUcK9422JBaEDX2MVWb54jnpIZhNdQeh/AQc/QMKhQKBgFgN\nE1/pst9ddClOVNJZZoIYCKq7BVAbK0GwgupTZzKPzY4k2STm9NCsfRkG1GApfb4l\nio3w0/m0Q8cPdWXSJt+I5MYG9a7hYziocovNTJ7IYd+hGWvHJr7kjmYqMJtzT+Lp\nDgYBVmh1kE/e+XIq+L/TMyNrk9dyJd6l5xRSbsC9AoGAYSbgSs4XOQsHj1ytDdmB\nNV8gdno0EYcrrL9QyT6s2SGlG3Rll+dmkHEcoqw5AZBbqpBJ09De3qQXdTr5DO6A\n3n4IJ93W8FH9erwhAD7MijcwVUHhFag7u8dbGwgkqnhbrr9aSuHLobjax98VerIp\nJ9OlKTrm7PAysbKSAQAxOLo=\n-----END PRIVATE KEY-----\n",
+  "client_email": "alan-admin@cloudvideointelligence-202703.iam.gserviceaccount.com",
+  "client_id": "102904762010727181013",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/alan-admin%40cloudvideointelligence-202703.iam.gserviceaccount.com"
+}
