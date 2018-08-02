@@ -9,9 +9,8 @@ import io
 
 
 # Obtain credentials
-def get_credentials():
-    credentials_path = './benchmark_google_admin_account.json'
-    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = credentials_path
+def get_credentials(auth_path):
+    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = auth_path
 
 
 # Inputs video path, outputs video contents
@@ -100,10 +99,12 @@ def print_data(result):
 
 # Run through all input files, obtain Google annotations for each
 if __name__ == "__main__":
+
     input_paths = paths['data_path']
     output_paths = paths['google_path']
+    auth_path = paths['google_auth_path']
 
-    get_credentials()
+    get_credentials(auth_path)
     file_names = get_paths(input_paths)
     for file_name in file_names:
         print(file_name, ': Processing')

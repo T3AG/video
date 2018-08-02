@@ -13,16 +13,20 @@ def extract_audio(file, audio):
     return
 
 
-# Inputs path and credentials, returns API call response, initialises call parameters, makes call
-def post_request(path):
-    # Watson application credentials
-    cred = {
-              "url": "https://stream.watsonplatform.net/speech-to-text/api",
-              "username": "d0c08233-357a-43e2-bc14-a4b3466a99e7",
-              "password": "G8hi5yuEsa7S"
-            }
+# Inputs path to credentials, and access type, outputs parsed credentials
+def get_cred(string, path):
+    with open(path) as f:
+        parsed = json.load(f)
+        select_parsed = parsed[string]
 
-    auth = (cred['username'], cred['password'])
+    return select_parsed
+
+
+# Inputs path and credentials, returns API call response, initialises call parameters, makes call
+def post_request(path, cred):
+
+    auth = cred['api']
+
     data = open(path, 'rb').read()
     url = 'https://stream.watsonplatform.net/speech-to-text/api/v1/recognize'
     headers = {
@@ -42,6 +46,9 @@ if __name__ == "__main__":
 
     input_paths = paths['data_path']
     output_paths = paths['ibm_path']
+    auth_path = paths['auth_path']
+    cred = get_cred('ibm', auth_path)
+
 
     file_names = get_paths(input_paths)
 
@@ -62,10 +69,12 @@ if __name__ == "__main__":
         else:
             print(file_name, ': Audio conversion already exists')
 
+        response = post_request(output_audio, cred)
+
         # Check if audio file has been processed, skip if it has
         if not os.path.isfile(output_path):
             try:
-                response = post_request(output_audio)
+                response = post_request(output_audio, cred)
                 print(file_name, ': Response received')
 
                 # Check if status was successful
