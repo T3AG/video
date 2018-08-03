@@ -25,7 +25,7 @@ def get_cred(string, path):
 # Inputs path and credentials, returns API call response, initialises call parameters, makes call
 def post_request(path, cred):
 
-    auth = cred['api']
+    auth = (cred['username'], cred['password'])
 
     data = open(path, 'rb').read()
     url = 'https://stream.watsonplatform.net/speech-to-text/api/v1/recognize'
@@ -68,8 +68,6 @@ if __name__ == "__main__":
                 print(file_name, ': Audio conversion unsuccessful')
         else:
             print(file_name, ': Audio conversion already exists')
-
-        response = post_request(output_audio, cred)
 
         # Check if audio file has been processed, skip if it has
         if not os.path.isfile(output_path):
