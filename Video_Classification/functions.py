@@ -16,7 +16,7 @@ paths = {
     'ibm_path'          : '!data/benchmark_ibm_',
     'google_path'       : '!data/benchmark_google_',
     'google_auth_path'  : '../auth/benchmark_google_admin_account.json',
-    'auth_path'     : '../auth/auth.json'
+    'auth_path'         : '../auth/auth.json'
 }
 
 

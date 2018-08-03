@@ -1,11 +1,13 @@
-import numpy as np
-import pickle
-from PIL import Image
-import time
-import tqdm
-import shutil
 from random import randint
+from PIL import Image
+
+import numpy as np
 import argparse
+import pickle
+import shutil
+import tqdm
+import time
+import os
 
 from torch.utils.data import Dataset, DataLoader
 import torchvision.transforms as transforms
@@ -34,7 +36,7 @@ parser.add_argument('--start-epoch', default=0, type=int, metavar='N', help='man
 def main():
     global arg
     arg = parser.parse_args()
-    print arg
+    print(arg)
 
     #Prepare DataLoader
     data_loader = dataloader.Motion_DataLoader(
