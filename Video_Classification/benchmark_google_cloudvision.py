@@ -1,4 +1,4 @@
-from functions import get_paths, save_to_pickle, paths
+from functions import get_paths, save_to_pickle
 from google.cloud import videointelligence
 from os.path import isfile, join
 from os import listdir
@@ -6,7 +6,6 @@ import os.path
 import pickle
 import os
 import io
-
 
 # Obtain credentials
 def get_credentials(auth_path):
@@ -98,14 +97,14 @@ def print_data(result):
 
 
 # Run through all input files, obtain Google annotations for each
-if __name__ == "__main__":
-
+def get_return(no_videos, paths):
     input_paths = paths['data_path']
     output_paths = paths['google_path']
     auth_path = paths['google_auth_path']
 
     get_credentials(auth_path)
-    file_names = get_paths(input_paths)
+    file_names = get_paths(input_paths)[:no_videos]
+
     for file_name in file_names:
         print(file_name, ': Processing')
         file_path = input_paths + file_name

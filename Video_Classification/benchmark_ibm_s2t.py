@@ -1,9 +1,14 @@
-from functions import get_paths, save_to_pickle, paths
+from functions import get_paths, save_to_pickle, save_to_txt
 import subprocess
 import requests
 import pickle
 import json
 import os
+
+
+# Inputs json, parses relavent portions and returns as string
+def parse_to_txt(json):
+    return ''.join([text['alternatives'][0]['transcript'] for text in json['results']])
 
 
 # Inputs file path and audio path, outputs audio to audio path
@@ -41,16 +46,14 @@ def post_request(path, cred):
     return response
 
 
-# Run through all input files, obtain Google annotations for each
-if __name__ == "__main__":
-
+# Run through all input files, obtain annotations for each
+def get_return(no_videos, paths):
     input_paths = paths['data_path']
     output_paths = paths['ibm_path']
     auth_path = paths['auth_path']
     cred = get_cred('ibm', auth_path)
 
-
-    file_names = get_paths(input_paths)
+    file_names = get_paths(input_paths)[:no_videos]
 
     for file_name in file_names:
         print(file_name, ': Processing')
@@ -58,6 +61,7 @@ if __name__ == "__main__":
         file_path = input_paths + file_name
         output_audio = output_paths + file_name + '.wav'
         output_path = output_paths + file_name + '.pickle'
+        output_path_txt = output_paths + file_name + '.txt'
 
         # Check if file has audio processed, skip if it has
         if not os.path.isfile(output_audio):
@@ -79,6 +83,9 @@ if __name__ == "__main__":
                 if response.status_code == 200:
                     parsed = json.loads(response.text)
                     save_to_pickle(output_path, parsed)
+                    parsed_txt = parse_to_txt(parsed)
+                    save_to_txt(output_path_txt, parsed_txt)
+
                     print(file_name, ': Response successful')
                 else:
                     print(file_name, ': Response unsuccessful')

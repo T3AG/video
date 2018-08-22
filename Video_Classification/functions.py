@@ -2,24 +2,6 @@ from os.path import isfile, join
 from os import listdir
 import pickle
 
-'''
-cd /media/alan/343EFB573EFB111A/Box\ Sync/git/video/data
-git add *
-git commit -m "your comment here"
-git push origin master
-git pull
-'''
-
-# Path directories
-paths = {
-    'data_path'         : '../../s3/FF-Data/',
-    'ibm_path'          : '!data/benchmark_ibm_',
-    'google_path'       : '!data/benchmark_google_',
-    'google_auth_path'  : '../auth/benchmark_google_admin_account.json',
-    'auth_path'         : '../auth/auth.json'
-}
-
-
 # Helper functions
 # Inputs input paths, returns all file paths at directory
 def get_paths(input_paths):
@@ -29,3 +11,25 @@ def get_paths(input_paths):
 # Inputs output file path and data, saves as pickle
 def save_to_pickle(output_dir, output_data):
     pickle.dump(output_data, open(output_dir, "wb"))
+
+
+# Inputs output file path and data, saves as txt
+def save_to_txt(output_dir, output_data):
+    with open(output_dir, "w") as file:
+        file.write(output_data)
+
+
+# Completion call back function. Updates global table
+def complete():
+    print('hi')
+
+
+# Creates pickle table for all data
+def load_table():
+    print('hi')
+
+
+def save_table():
+    print('hi')
+
+

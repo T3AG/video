@@ -8,7 +8,7 @@ import shutil
 from random import randint
 import argparse
 
-import torchvision.transforms as transforms
+import torchvision.transforms as transfdorms
 import torchvision.models as models
 import torch.nn as nn
 import torch
@@ -30,6 +30,8 @@ parser.add_argument('--evaluate', dest='evaluate', action='store_true', help='ev
 parser.add_argument('--resume', default='', type=str, metavar='PATH', help='path to latest checkpoint (default: none)')
 parser.add_argument('--start-epoch', default=0, type=int, metavar='N', help='manual epoch number (useful on restarts)')
 
+print('')
+
 def main():
     global arg
     arg = parser.parse_args()
@@ -39,7 +41,7 @@ def main():
     data_loader = dataloader.spatial_dataloader(
                         BATCH_SIZE=arg.batch_size,
                         num_workers=8,
-                        path='/home/ubuntu/data/UCF101/spatial_no_sampled/',
+                        path='../',
                         ucf_list ='/home/ubuntu/cvlab/pytorch/ucf101_two_stream/github/UCF_list/',
                         ucf_split ='01', 
                         )
