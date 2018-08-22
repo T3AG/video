@@ -65,32 +65,25 @@ def get_return(no_videos, paths):
 
         # Check if file has audio processed, skip if it has
         if not os.path.isfile(output_audio):
-            try:
-                extract_audio(file_path, output_audio)
-                print(file_name, ': Audio conversion successful')
-            except:
-                print(file_name, ': Audio conversion unsuccessful')
+            extract_audio(file_path, output_audio)
+            print(file_name, ': Audio conversion successful')
         else:
             print(file_name, ': Audio conversion already exists')
 
         # Check if audio file has been processed, skip if it has
         if not os.path.isfile(output_path):
-            try:
-                response = post_request(output_audio, cred)
-                print(file_name, ': Response received')
+            response = post_request(output_audio, cred)
+            print(file_name, ': Response received')
 
-                # Check if status was successful
-                if response.status_code == 200:
-                    parsed = json.loads(response.text)
-                    save_to_pickle(output_path, parsed)
-                    parsed_txt = parse_to_txt(parsed)
-                    save_to_txt(output_path_txt, parsed_txt)
+            # Check if status was successful
+            if response.status_code == 200:
+                parsed = json.loads(response.text)
+                save_to_pickle(output_path, parsed)
+                parsed_txt = parse_to_txt(parsed)
+                save_to_txt(output_path_txt, parsed_txt)
 
-                    print(file_name, ': Response successful')
-                else:
-                    print(file_name, ': Response unsuccessful')
-
-            except:
-                print(file_name, ': Response not received')
+                print(file_name, ': Response successful')
+            else:
+                print(file_name, ': Response unsuccessful')
         else:
             print(file_name, ': Response already exists, moving to next file')
