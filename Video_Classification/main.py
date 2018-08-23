@@ -10,7 +10,7 @@ paths = {
     'auth_path'         : '../auth/auth.json'
 }
 
-no_videos = 1
+no_videos = 5
 
 
 benchmark_ibm_s2t.get_return(no_videos, paths)
