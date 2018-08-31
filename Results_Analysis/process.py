@@ -15,11 +15,11 @@ def get_paths(input_paths):
 
 
 def process_ibm(json):
-    results = json['results']
-    for transcript in results:
-        print(transcript['alternatives'][0]['transcript'])
+    text = ''.join([text['alternatives'][0]['transcript'] for text in json['results']])
 
-    return
+    with open('txt.txt', "w") as file:
+        file.write(text)
+    return text
 
 
 files = get_paths(path)
@@ -32,4 +32,18 @@ for file in files:
             string = pickle.load(open(path+file, "rb"))
             process_ibm(string)
         elif beg_string_google in file:
-            pass
+            string = pickle.load(open(path+file, "rb"), encoding='latin1')
+
+            with open(path+file, 'rb') as f:
+                print(f)
+                u = pickle._Unpickler(f)
+                print(u)
+                u.encoding = 'latin1'
+                p = u.load()
+                print(p)
+            string = pickle.load(open(path+file, "rb"))
+
+            string = pickle.load(path+file)
+            with open(path+file, "rb") as t:
+                print(t)
+                string = pickle.load(t)
